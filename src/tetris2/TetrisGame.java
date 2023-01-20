@@ -4,6 +4,13 @@ import java.util.List;
 
 import tetris2.blocks.Block;
 
+/**
+ * Need to improve:
+ * 1.: L block rotation
+ * 2.: scoring: for example, double points for removing two lines
+ * 3.: save individual record
+ */
+
 public class TetrisGame implements Runnable{
 	
 	private MainWindow mainWindow;
