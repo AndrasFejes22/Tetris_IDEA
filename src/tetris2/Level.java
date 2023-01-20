@@ -105,7 +105,7 @@ public class Level {
 		for (int row = 0; row < HEIGHT; row++) {
 			int columnCounter = 0;
 			for (int column = 0; column < WIDTH; column++) {
-				if("X".equals(level[row][column])) {
+				if("██".equals(level[row][column])) {
 					columnCounter++;
 				}
 			}
