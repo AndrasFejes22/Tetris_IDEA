@@ -90,12 +90,16 @@ public abstract class Block {
 		for(int i = 0; i < numberOfRotations; i++) {
 		randomBlock.rotate(); // véletlenszerűen forgatunk rajt 0-át, 1-et, 2-öt, vagy 3-at
 		}
-		//row beállítása:
+		//set initial row::
+		initRow(randomBlock);
+		return randomBlock;
+	}
+
+	public static void initRow(Block randomBlock) {
 		List<MiniBlock> miniBlocksCopy = new ArrayList<>(randomBlock.miniBlocks);
 		Collections.sort(miniBlocksCopy, new MiniBlockRowComparator());
 		MiniBlock topMiniBlock = miniBlocksCopy.get(0);
 		randomBlock.setRow(-topMiniBlock.getRowOffset());
-		return randomBlock;
 	}
 	
 	//public Block() {} //üres konstruktor
