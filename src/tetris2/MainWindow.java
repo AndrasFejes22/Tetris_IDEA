@@ -31,16 +31,16 @@ public class MainWindow {
 
 	/**
 	 * Launch the application.
-	 * EventQueue: kattingatáskor eseményeket generálunk, ezekre lehet reagálni a kódban
+	 * EventQueue: kattingataskor esemenyeket generalunk, ezekre lehet reagalni a kodban
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() { //paraméterként át van adva egy névtelen osztály
+		EventQueue.invokeLater(new Runnable() { //parameterkent at van adva egy nevtelen osztaly
 			public void run() {
 				try {
 					MainWindow mainWindow = new MainWindow();
 					mainWindow.mainFrame.setVisible(true);
-					// A játék logikája egy külön szálon fusson:
-					Executors.newSingleThreadExecutor().execute(new TetrisGame(mainWindow)); // ez egy külön szál
+					// A jï¿½tï¿½k logikï¿½ja egy kï¿½lï¿½n szï¿½lon fusson:
+					Executors.newSingleThreadExecutor().execute(new TetrisGame(mainWindow)); // ez egy kulon szal
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -65,7 +65,7 @@ public class MainWindow {
 	private void initialize() {
 		mainFrame = new JFrame();
 		mainFrame.setResizable(false);
-		mainFrame.setTitle("Tetris v 0.5");
+		mainFrame.setTitle("Tetris v 1.5");
 		mainFrame.setBounds(100, 100, 473, 589);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.getContentPane().setLayout(new BorderLayout(0, 0));
@@ -150,7 +150,7 @@ public class MainWindow {
 		gameArea = new JTextArea();
 		gameArea.setFont(new Font("Consolas", Font.BOLD, 31));
 		gameArea.setEditable(false);
-		gameArea.setHighlighter(null); // utólag generálva: a szövegen ne lehessen kijelölni
+		gameArea.setHighlighter(null); // utï¿½lag generï¿½lva: a szï¿½vegen ne lehessen kijelï¿½lni
 		gameArea.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent keyEvent) {
@@ -160,9 +160,9 @@ public class MainWindow {
 				break;
 				case KeyEvent.VK_RIGHT: tetrisGame.moveBlockRight(); 
 				break;
-				case KeyEvent.VK_DOWN: tetrisGame.dropBlock(); // lefele nyillal gyorsítjuk (a sleep()-en keresztül)
+				case KeyEvent.VK_DOWN: tetrisGame.dropBlock(); // lefele nyillal gyorsï¿½tjuk (a sleep()-en keresztï¿½l)
 				break;
-				case KeyEvent.VK_SPACE: tetrisGame.rotate(); // lefele nyillal gyorsítjuk (a sleep()-en keresztül)
+				case KeyEvent.VK_SPACE: tetrisGame.rotate(); // lefele nyillal gyorsï¿½tjuk (a sleep()-en keresztï¿½l)
 				break;
 				default:
 					break;
